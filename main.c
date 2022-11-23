@@ -37,6 +37,8 @@ int check_gameEnd(void){
 
 int main(int argc, char *argv[]) {
 	
+	int selNum;
+	
 	srand((unsigned)time(NULL));
 	
 	//opening
@@ -48,53 +50,17 @@ int main(int argc, char *argv[]) {
 	
 	
 	//game
-	/*
-	//test
-	bingo_init();
-	bingo_printBoard();
-	
-	test
-	bingo_inputNum(8);
-	bingo_printBoard();
-	bingo_inputNum(25);
-	bingo_printBoard();
-	bingo_inputNum(18);
-	bingo_printBoard();
-	
-	
-	
-	int selNum;
-	selNum = get_number();
-	bingo_inputNum(selNum);
-	bingo_printBoard();
-	*/
+
 	bingo_init();
 	
 	while(check_gameEnd() == BINGO_RES_UNFINISHED)
-	{
-		int selNum;
-		
+	{	
 		bingo_printBoard();
 		printf("No. of completed lines : %i\n", bingo_countCompletedLine());
 		selNum = get_number();
 		bingo_inputNum(selNum);
 	}
 		
-	
-	//initialize bingo board
-	
-	/*
-	while (game is not end) //줄 수가 N_BINGO보다 작음 
-	{
-		//bingo board print
-		
-		//print no.of completed line
-		
-		//select a number
-		
-		//update the board status
-	}
-	*/
 	
 	bingo_printBoard();
 	printf("No. of completed lines : %i\n", bingo_countCompletedLine());
